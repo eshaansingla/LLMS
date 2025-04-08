@@ -9,6 +9,7 @@ chars_to_int = { ch:i for i, ch in enumerate(chars) }
 int_to_chars = { i:ch for i, ch in enumerate(chars) }
 encode= lambda x: ([chars_to_int[c] for c in x])
 decode= lambda x:''.join([int_to_chars[c] for c in x])
+print(encode('LLMS INTRODUCTION'))
 print(decode(encode('LLMS INTRODUCTION')))
 
 
