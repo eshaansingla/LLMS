@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import torch
 with open("text.txt",'r',encoding="utf-8") as file:
@@ -23,5 +22,7 @@ for i in range(block_size):
     y = train_data[i+1:i+block_size+1]
     print(f'Context: {x.tolist()} -> Target: {y.tolist()}')
     print(f'Decoded Context: "{decode(x.tolist())}" -> Target: "{decode(y.tolist())}"')
-
-
+device='cuda' if torch.cuda.is_available() else 'cpu'
+print(device)
+print("CUDA Available:", torch.cuda.is_available())
+print("CUDA Device:", torch.cuda.get_device_name(0) if torch.cuda.is_available() else "None")
